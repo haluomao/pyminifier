@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 #
-#       Copyright 2013 Liftoff Software Corporation
+#       Copyright 2018 haluomao Software Corporation
 #
 # For license information see LICENSE.txt
 
@@ -8,7 +8,7 @@
 __version__ = '2.2'
 __version_info__ = (2, 2)
 __license__ = "GPLv3" # See LICENSE.txt
-__author__ = 'Dan McDougall <daniel.mcdougall@liftoffsoftware.com>'
+__author__ = 'Fagui Mao <maofg92@163.com>'
 
 # TODO: Add the ability to mark variables, functions, classes, and methods for non-obfuscation.
 # TODO: Add the ability to selectively obfuscate identifiers inside strings (for metaprogramming stuff).
@@ -251,7 +251,7 @@ def pyminify(options, files):
                 result = compression.lzma_pack(result)
             result += (
                 "# Created by pyminifier "
-                "(https://github.com/liftoff/pyminifier)\n")
+                "(https://github.com/haluomao/pyminifier)\n")
             # Either save the result to the output file or print it to stdout
             if not os.path.exists(options.destdir):
                 os.mkdir(options.destdir)
@@ -306,7 +306,7 @@ def pyminify(options, files):
             result = compression.lzma_pack(result)
         result += (
             "# Created by pyminifier "
-            "(https://github.com/liftoff/pyminifier)\n")
+            "(https://github.com/haluomao/pyminifier)\n")
         # Either save the result to the output file or print it to stdout
         if options.outfile:
             f = io.open(options.outfile, 'w', encoding='utf-8')
