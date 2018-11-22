@@ -199,7 +199,7 @@ def reduce_operators(source):
                 if prev_tok[0] != tokenize.OP:
                     out += (" " * (start_col - last_col))
             if token_type == tokenize.STRING:
-                if prev_tok[0] == tokenize.STRING:
+                if prev_tok is not None and prev_tok[0] == tokenize.STRING:
                     # Join the strings into one
                     string_type = token_string[0] # '' or ""
                     prev_string_type = prev_tok[1][0]

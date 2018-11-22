@@ -176,7 +176,7 @@ def pyminify(options, files):
                   "resulting .pyz)")
             sys.exit(1)
         # Make our .pyz:
-        compression.zip_pack(files, options)
+        compression.zip_pack(files[0], options)
         return None # Make sure we don't do anything else
     # Read in our prepend text (if any)
     prepend = None
@@ -313,6 +313,7 @@ def pyminify(options, files):
             f.write(result)
             f.close()
             new_filesize = os.path.getsize(options.outfile)
+            filesize = 1 if filesize == 0 else filesize
             percent_saved = round(float(new_filesize)/float(filesize) * 100, 2)
             print((
                 "{_file} ({filesize}) reduced to {new_filesize} bytes "
